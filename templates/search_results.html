@@ -2,10 +2,10 @@
 <h1>Cities</h1>
 
 <form action="{% url 'search_results' %}" method="get">
-    <input name="a" type="text" placeholder="Search...">
+    <input name="q" type="text" placeholder="Search...">
 </form>
 
-<button><a href="/search/?a=">Refresh</a></button>
+<button><a href="/search/?q=">Refresh</a></button>
 
 <ul>
   {% for city in object_list %}
