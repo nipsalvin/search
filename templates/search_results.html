@@ -1,0 +1,18 @@
+<!-- templates/search_results.html -->
+<h1>Cities</h1>
+
+<form action="{% url 'search_results' %}" method="get">
+    <input name="a" type="text" placeholder="Search...">
+</form>
+
+<button><a href="/search/?a=">Refresh</a></button>
+
+<ul>
+  {% for city in object_list %}
+    <li>
+      {{ city.name }}, {{ city.state }}
+    </li>
+  {% endfor %}
+</ul>
+
+<button><a href="/">Home</a></button>
