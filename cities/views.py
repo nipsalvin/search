@@ -15,10 +15,8 @@ class SearchResultsView(ListView):
     
     def get_queryset(self):
         query = self.request.GET.get('q')
-        object_list = City.objects.filter(
-            Q(name__icontains=query) | Q(state__icontains=query)
-            )
-        print(object_list)
+        object_list = City.objects.filter(Q(name__icontains=query) | Q(state__icontains=query))
+        # print(object_list[0])
         return object_list
 
         
