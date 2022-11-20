@@ -15,6 +15,8 @@ class SearchResultsView(ListView):
     
     def get_queryset(self):
         query = self.request.GET.get('q')
+        if query is None:
+            query = ""
         object_list = City.objects.filter(Q(name__icontains=query) | Q(state__icontains=query))
         print("\U0001F600")
         return object_list
